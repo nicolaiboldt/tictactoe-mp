@@ -1,8 +1,8 @@
 {
-  "name": "eslint_einrichtung",
+  "name": "ttt_mp",
   "version": "1.0.0",
   "description": "",
-  "main": "game.js",
+  "main": "game_classified.js",
   "scripts": {
     "start": "node ./scripts/server.js"
   },
