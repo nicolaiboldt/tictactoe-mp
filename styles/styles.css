@@ -1,0 +1,1025 @@
+@font-face {
+    font-family: mainFont;
+    src: url(../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+:root{
+    margin: 0 auto;
+    --columns: 3;
+    --containerwidth: 450px;
+    --feldgroesse: var(--containerwidth) / var(--columns);
+    
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body{
+    margin: 0 auto;
+    text-align: center;
+    font-family: mainFont;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+footer,header,main,.content {
+    width: 100%;
+}
+
+main{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+footer{
+    border-top: 1px solid black;
+    padding: 1em;
+    text-align: center;
+}
+
+h1{
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: black;
+    transition: 0.3s;
+}
+
+.start_heins {
+    opacity: 0%;
+    animation: slideInTop 1s 3.5s;
+    animation-fill-mode: forwards;
+}
+
+h1:hover{
+    transform-origin: center;
+    transform: scale(1.1);
+}
+
+nav{
+    
+    text-align: center;
+    white-space: nowrap;
+}
+
+.start_nav {
+    opacity: 0%;
+    animation: slideInTop 1s 3.5s;
+    animation-fill-mode: forwards;
+}
+
+nav a{
+    transition: 0.2s;
+    border-radius: 20px;
+    padding: 15px 32px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover{
+    background-color: black;
+    color: white;
+}
+
+.navActive {
+    background-color: black;
+    color: white;
+}
+
+button, button:active{
+    background-color: #f4511e;
+    display: flexbox;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 1px solid #f4511e;
+    border-radius: 15px;
+    font-family: mainFont;
+
+}
+
+@media (hover: hover) {
+    button:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        transform: scale(1.1);
+  }
+}
+
+p {
+    width: 60%;
+    /*margin: 0 auto;*/
+}
+
+.start_desc {
+    text-align: center;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 0%;
+}
+
+.start_cta {
+    width: 100%;
+    font-size: 1.3em;
+    margin-bottom: 2em;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+    margin-bottom: 1.5em;
+    margin-top: 3em;
+    animation: heySlide 0.5s 3s;
+    animation-fill-mode: both;
+}
+
+.textContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    animation: slideInTop 0.5s 3s;
+    animation-fill-mode: both;
+}
+
+.start_content {
+    width: 70%;
+    opacity: 0%;
+    animation: slideInTop 1s 3.5s; 
+    animation-fill-mode: forwards;
+}
+
+.hi {    
+    display: grid;
+    grid-template-columns:  repeat(5,auto);
+    column-gap: 0px;
+    width: 12em;
+    height: 12em;
+}
+
+.grid {
+    width: 2.4em;
+    height: 2.4em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+
+    border: none;
+}
+
+
+.iconStart {
+    image-rendering: auto;
+    object-fit: contain;
+    height: 75%;
+    width: 80%;
+    /*will-change: transform;*/
+    animation: appear 0.3s cubic-bezier(0.5,1.2,0.1,1.1);
+}
+
+.start_button {
+    font-size: 1.4em;
+    font-weight: 800;
+    font-family: mainFont;
+    opacity: 100%;
+    animation: appear 0.5s;
+}
+
+
+
+.start_button_sec {
+    background-color: white;
+    color:black;
+    font-family: mainFont;
+    border-color: black;
+    opacity: 100%;
+    animation: appear 0.5s;
+}
+
+.start_button_sec:hover {
+    transform: scale(1.1);
+    opacity: 100%;
+}
+
+.start_buttonleiste {
+    display: flex;
+    gap: 2em;
+}
+
+.start_footer {
+    opacity: 0%;
+    animation: fadeIn 0.5s 3.5s;
+    animation-fill-mode: forwards;
+}
+
+
+#hfu_bild {
+    width: 30%;
+    transition:0.3s;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#hfu_bild:hover{
+    opacity: 60%;
+}
+
+#slider{
+    margin-left: 1em;
+}
+
+#groesse {
+    margin-top: 1em;
+}
+
+.start_slider {
+    margin: 0em 1em;
+    box-shadow: 0 0 20px -10px black;
+    padding: 1.5em 2.5em;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    float:inline-end;
+}
+
+h2 {
+    margin: 0;
+}
+
+.start_hzwei {
+    font-size: 2.1em;
+    margin-bottom: 1em;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.sliderLabel.disabled {
+    color: lightgrey;
+}
+
+.pointsDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7em;
+    border-right: 3px solid black;
+    padding-right: 1em;
+}
+
+.pointsDisplay p {
+    font-size: large;
+    margin: 0;
+    width: 100%;
+}
+
+#pointsLabel {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+#sizeLabel {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    width: 100%;
+}
+
+.iconAuswahl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    opacity: 18%;
+    transition: 0.2s;
+    width: 4.5em;
+}
+.iconAuswahl:hover {
+    opacity: 100%;
+}
+.iconAuswahl.high {
+    opacity: 100%;
+}
+
+.playerInput {
+    display:none;
+    width: 100%;
+    height: 100%;
+    font-family: mainFont;
+}
+
+.playerInput.show {
+    display: inline;
+    animation: fadeIn 0.3s;
+}
+
+.playerLabel:hover {
+    cursor:text;
+}
+
+.playerLabel {
+    display:none;
+    padding-top: 2px;
+}
+
+.playerLabel.show {
+    display: inline-block;
+    line-break: strict;
+   
+    animation: fadeIn 0.3s;
+}
+
+.previewIcon {
+    object-fit: contain;
+    transition: 0.3s;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+
+.previewIcon:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+}
+
+
+.resetButtons {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resetButtons button {
+    padding: 10px 15px;
+}
+
+#showNumbers {
+    display: none;
+}
+
+#winErzwingen {
+    display: none;
+}
+
+#iconDropdown {
+    width: 1.2em;
+    height: 1.2em;
+    padding-top: 0.2em;
+}
+
+.iconDrop {
+    transform: translateX(-0.3em);
+    opacity: 0%;
+    transition: 0.3s;
+}
+
+.iconDrop.show {
+    transform: translateX(0em);
+    opacity: 100%;
+}
+
+.resetP {
+    width: fit-content;
+    transform: translateX(0.7em);
+    transition: 0.3s;
+}
+
+.resetP.show {
+    transform: translateX(0px);
+}
+
+#resetAndIcon {
+    width: 4em;
+    height: 3em;
+    display: flex;
+    gap: 0.2em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.dropdownBG {
+    background-color: #f4511e;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 1px solid #f4511e;
+    border-radius: 15px;
+    display: flexbox;
+    z-index: 2;
+    position: relative;
+}
+
+@media (hover: hover) {
+    .dropdownBG:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+  }
+}
+
+#resetDropdown {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    width: 6.5em;
+    height: fit-content;
+    top: -25%;
+    left: 90%;
+    padding: 0.5em;
+    border-radius: 15px;
+    display: none;
+    z-index: 1;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.dropdown.show {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    animation: dropdown 0.3s;
+}
+
+.dropdown p {
+    margin: 0 auto;
+    padding: 0.2em;
+}
+
+.dropdown p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#getWinner {
+    background-color: #f4511e;
+    display: flexbox;
+    font-family: mainFont;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 1px solid #f4511e;
+    border-radius: 15px;
+    transform: scale(1);
+
+}
+#getWinner:hover {
+    cursor: pointer;
+    font-family: mainFont;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transform: scale(1);
+}
+
+.settingBox {
+    display: none;
+    translate: 2px;
+    align-items: center;
+    gap: 0em;
+    
+}
+
+.setting {
+    background-color: white;
+    box-shadow: 0 0 20px -10px black;
+    display: flex;
+    transform-origin: top;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 20px;
+    user-select: none;
+    
+}
+
+.firstSetting {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: max-content;
+    border-radius: 20px;
+    user-select: none;
+}
+
+.secondSetting {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    width: max-content;
+    user-select: none;
+    padding: 0 1em 0 0;
+    border-right: 3px solid black;
+}
+
+.thirdSetting {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: max-content;
+    user-select: none;
+    gap: 1rem;
+    width: 7em;
+}
+
+.thirdSetting p {
+    font-size: large;
+    margin: 0;
+    width: 100%;
+}
+
+#roomIDP {
+    font-size: larger;
+    font-weight: 800;
+}
+
+#roomP {
+}
+
+@media (max-width: 940px) {
+
+    .boardContainer {
+        scale: 90%;
+        transform-origin: top;
+        transition: 0.3s;
+    }
+
+    .setting {
+        scale: 80%;
+        transition: 0.3s;
+    }
+
+}
+
+@media (max-width: 732px) {
+
+    .boardContainer {
+        scale: 90%;
+        transform-origin: top;
+        transition: 0.3s;
+    }
+
+    .setting {
+        scale: 70%;
+        transition: 0.3s;
+    }
+
+}
+
+@media (max-width: 642px) {
+
+    .boardContainer {
+        scale: 80%;
+        transition: 0.3s;
+    }
+
+    .setting {
+        scale: 80%;
+        height: 1%;
+        flex-wrap: wrap;
+        transition: 0.3s;
+    }
+
+    
+    .firstSetting {
+        flex-basis: 100%;
+        transition: 0.3s;
+    }
+
+    .secondSetting {
+        flex-basis: 100%;
+        transition: 0.3s;
+    }
+
+    .rEins {
+        flex-basis: 60%;
+        transition: 0.3s;
+    }
+}
+
+@media (max-width: 490px) {
+    nav a {
+        font-size: small;
+    }
+}
+
+@media (max-width: 436px) {
+    nav a {
+        font-size:x-small;
+    }
+
+    .setting {
+        scale: 70%;
+    }
+}
+
+.stats {
+    display: none;
+    position: absolute;
+    left: 74%;
+    background-color: white;
+    width: fit-content;
+    height: 7em;
+    border-radius: 15px;
+    margin: 1rem;
+    z-index: 100;
+    
+}
+
+.stats.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0em;
+    box-shadow: 0 0 20px -10px black;
+    animation: dropdown 0.3s;
+    padding: 1em;
+}
+
+.stats p {
+    margin: 0;
+    font-size: large;
+    text-align: left;
+    width: 100%;
+    padding: 0.2em
+
+}
+
+#tLast {
+    font-size: larger;
+    font-weight: 600;
+}
+
+
+#iconSound {
+    object-fit: contain;
+    width: 3em;
+    height: 3em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#iconSound:hover {
+    transform: scale(1.1);
+}
+
+#resetGame {
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.cbs {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.cb {
+    width: 10px;
+    aspect-ratio: 1 / 1;
+    background-color: transparent;
+    padding: 2px;
+    outline: 2px solid black;
+    outline-offset: 2px;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+
+.cb.checked {
+    background-color: #f4511e;
+}
+
+#iconReset {
+    object-fit: contain;
+    width: 3em;
+    height: 3em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#iconReset:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+.regeln {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    box-shadow: 0 0 20px -10px black;
+    border-radius: 15px;
+    padding: 0.5em;
+    gap: 1em;
+    transform-origin: top center;
+}
+
+.block div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.block p {
+    font-size: 1em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.block img {
+    max-height: 10em;
+}
+
+
+.block h3 {
+    font-size: 1.5em;
+    margin: 0 auto;
+}
+
+
+.block.eins {
+    animation: growDown 0.5s backwards;
+}
+
+.block.zwei {
+    padding: 2em 1em;
+    width: 90%;
+    animation: growDown 0.5s 0.2s backwards;
+}
+
+.block.zwei img {
+    padding-left: 1em;
+}
+
+.block.drei {
+    width: 90%;
+    animation: growDown 0.5s 0.4s backwards;
+}
+
+.howto_button {
+    font-size: 1.4em;
+    font-weight: 800;
+    font-family: mainFont;
+    opacity: 100%;
+    animation: growDown 0.5s 0.6s backwards;
+}
+
+
+
+.boardContainer {
+    position: relative;
+}
+
+.endscreen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 20px -10px black;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.endscreen.show {
+    display: flex;
+    cursor: pointer;
+}
+
+
+
+.endText {
+    font-size: 2em;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.winningIcon {
+    width: 3em;
+    display: none;
+}
+
+.winningIcon.show {
+    display: block;
+}
+
+#spiel {
+    display: grid;
+    grid-template-columns:  repeat(var(--columns),auto);
+    column-gap: 0px;
+    width: var(--containerwidth);
+    height: var(--containerwidth);
+    margin: 0 auto;
+    padding: 1em;
+    position: relative;
+}
+
+.board {
+    transition: 0.3s;
+    overflow: hidden;
+    user-select: none;
+}
+
+.board.show {
+    opacity: 50%;
+    /*filter: blur(3px);*/
+    pointer-events: none;
+}
+
+.grid-item.x:hover, .grid-item.o:hover {
+    cursor: not-allowed;
+}
+
+.grid-item {
+    background-color: rgb(255, 255, 255);
+    width: var(--feldgroesse);
+    height: var(--feldgroesse);
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+.grid-item.high {
+    background-color: #f4511e;
+}
+
+.grid-item.low {
+    background-color: yellow;
+}
+
+.bb {
+    border-bottom: 3px solid black;
+}
+
+.br {
+    border-right: 3px solid black;
+}
+
+.bt {
+    border-top: 3px solid black;
+}
+
+.icon {
+    image-rendering: auto;
+    object-fit: contain;
+    height: 75%;
+    width: 80%;
+    /*will-change: transform;*/
+    animation: appear 0.3s cubic-bezier(0.5,1.2,0.1,1.1);
+   
+}
+
+@keyframes appear {
+    0% {
+    transform: scale(0.3);
+    opacity: 0%;
+    filter: blur(2px);
+    }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+    filter: blur(0px);
+    }
+}
+
+@keyframes slideInTop {
+    0% {
+      transform: translateY(5%);
+      opacity: 0%;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 100%;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 100%;
+    }
+  }
+
+  @keyframes heySlide {
+    0% {
+      transform: translateY(120%);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 100%;
+    }
+  }
+
+  @keyframes btnHover {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+  }
+
+  @keyframes dropdown {
+
+    0% {
+
+        transform: translateX(-1em);
+        opacity: 0%;
+    
+      }
+    
+      100% {
+    
+        transform: translateX(0em);
+        opacitiy: 100%;
+    
+      }
+  }
+
+  @keyframes growDown {
+
+    0% {
+  
+      transform: translateY(-1.5em);
+      opacity: 0%;
+  
+    }
+  
+    100% {
+  
+        transform: translateY(0);
+        opacity: 100%;
+  
+    }
+  
+  }

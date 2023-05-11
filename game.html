@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nicolai Boldt">
+    <title>Spielen - Tic-Tac-Toe Extreme</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/game_classified.js" defer></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <a href="index.html">
+                <h1>Tic-Tac-Toe EXTREME</h1>
+            </a>
+            <nav>
+                <a href="game.html" class="navActive">Spielen</a>
+                <a href="howto.html">Wie man spielt</a>
+                <a href="about.html">Über das Projekt</a>
+            </nav>
+        </header>
+        <main>
+            <div class="startscreen">
+                <h4>Erstelle ein neues Spiel</h4>
+				<input type="text" name="name" id="nameNew" placeholder="Name" required value="hello">
+				<button id="new">Neues Spiel</button>
+				<br><br>
+				<h4>Tritt einem Spiel bei</h4>
+				<input type="text" name="name" id="nameJoin" placeholder="Name" required value="world">
+				<input type="text" name="room" id="room" placeholder="Raum ID" required value="room-0">
+				<button id="join">Spiel beitreten</button>
+            </div>
+            <h4 id="userHello"></h4>
+            <div class="settingBox">
+                <div class="setting">
+                    <div class="firstSetting">
+                        <div id="slider">
+                            <p id="sizeLabel">Spielfeldgröße</p>
+                            <input type="range" min="3" max="7" value="3" id="groesse" oninput="sliderChange()">
+                            <div class="labels">
+                                <label class="sliderLabel">3</label>
+                                <label class="sliderLabel">4</label>
+                                <label class="sliderLabel">5</label>
+                                <label class="sliderLabel">6</label>
+                                <label class="sliderLabel">7</label>
+                            </div>
+                        </div>
+                        <div class="pointsDisplay">
+                            <p>Erreiche</p>
+                            <label id="pointsLabel">3</label>
+                            <p>für den Sieg</p>
+                        </div>
+                        <div class="iconAuswahl" id="auswahlX">
+                            <input type="file" id="inputX" accept="image/jpeg, image/png, image/jpg" hidden="hidden"
+                                onchange="uploadX(event)">
+                            <img class="previewIcon" id="previewIconX" src="assets/img/x.png"
+                                title="Symbol auswählen"></img>
+                            <label id="player1" class="playerLabel show" title="Namen eingeben">Spieler 1</label>
+                            <input type="text" id="namePlayer1" class="playerInput" placeholder="Spieler 1"
+                                maxlength="8" onfocus="this.select();">
+                        </div>
+                        <div class="iconAuswahl" id="auswahlO">
+                            <input type="file" id="inputO" accept="image/jpeg, image/png, image/jpg" hidden="hidden"
+                                onchange="uploadO(event)">
+                            <img class="previewIcon" id="previewIconO" src="assets/img/o.png"
+                                title="Symbol auswählen"></img>
+                            <label id="player2" class="playerLabel show" title="Namen eingeben">Spieler 2</label>
+                            <input type="text" id="namePlayer2" class="playerInput" placeholder="Spieler 2"
+                                maxlength="8" onfocus="this.select();">
+                        </div>
+                    </div>
+                    <div class="secondSetting">
+                        <div class="resetButtons rEins">
+                            <div id="resetDropdown">
+                                <div class="dropdownBG">
+                                    <div id="resetAndIcon">
+                                        <p id="resetP" class="resetP">Standard</p>
+                                        <img id="iconDropdown" class="iconDrop" src="assets/img/dropdown_b.png">
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <p id="resetIcons" onclick="resetIcons()">Symbole</p>
+                                    <p id="resetNames" onclick="resetNames()">Namen</p>
+                                </div>
+                            </div>
+                            <button id="getWinner" onclick="getWinner()">Letztes Ergebnis</button>
+                        </div>
+                        <div class="resetButtons">
+                            <button id="winErzwingen" onclick="winErzwingen()">Force win</button>
+                            <button id="showNumbers" onclick="showNumbers()">Show numbers</button>
+                        </div>
+                        <div class="resetButtons" title="Audio ein/aus">
+                            <img id="iconSound" src="assets/img/speaker.png">
+                        </div>
+                        <div id="resetGame" title="Spiel zurücksetzen">
+                            <img id="iconReset" src="assets/img/reset.png">
+                            <div class="cbs">
+                                <div class="cb" id="checkX"></div>
+                                <div class="cb" id="checkO"></div>
+                            </div>
+                        </div>
+                        <div class="stats">
+                            <p id="tLast">Letztes Spiel</p>
+                            <p id="tWinner">Gewinner:</p>
+                            <p id="tSize">Spielfeldgröße:</p>
+                            <p id="tMoves">Züge:</p>
+                        </div>
+                    </div>
+                    <div class="thirdSetting">
+                        <p id="roomIDP">Game ID:</p>
+                        <p id="roomP"></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="boardContainer" hidden>
+                <div class="board x" id="spiel">
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                </div>
+                <div class="endscreen" title="Zurücksetzen">
+                    <img class="winningIcon" src="assets/img/x.png">
+                    <div class="endText">Spieler 1 gewinnt!</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>Impressum</footer>
+</body>
+
+</html>
