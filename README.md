@@ -1,8 +1,7 @@
-# Tic-Tac-Toe EXTREME
+# Tic-Tac-Toe EXTREME - Multiplayer Edition
 
-Spiele jetzt den Gelegenheitsspiel-Klassiker im neuen Look und mit erweiterter Funktionalität!
+Spiele jetzt den Gelegenheitsspiel-Klassiker im neuen Look und mit Multiplayer Support!
 
-Repository von Nicolai Boldt, OMB 2
+Repository von Nicolai Boldt, OMB 4 (mittlerweile lol)
 
 ![TicTacToe](./assets/img/screen_klassisch.PNG)
-
