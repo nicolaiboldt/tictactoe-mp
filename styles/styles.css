@@ -115,8 +115,54 @@ button, button:active{
         background-color: white;
         color: black;
         border: 1px solid black;
-        transform: scale(1.1);
+        transform: scale(1.05);
   }
+}
+
+.startscreen {
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    margin-top: 2em;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.login p {
+    width: 100%;
+}
+
+.lhead{
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#oder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.login input {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid grey;
+    transition: 0.3s;
+}
+
+.login input:focus {
+    border: 1px solid #f4511e;
+    outline: none;
+    box-shadow: 0 0 20px -15px black;
 }
 
 p {
@@ -548,17 +594,16 @@ h2 {
     gap: 1rem;
     width: max-content;
     user-select: none;
-    padding: 0 1em 0 0;
-    border-right: 3px solid black;
 }
 
 .thirdSetting {
     background-color: white;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     width: max-content;
+    height: 100%;
     user-select: none;
     gap: 1rem;
     width: 7em;
@@ -636,6 +681,15 @@ h2 {
     .rEins {
         flex-basis: 60%;
         transition: 0.3s;
+    }
+
+    .startscreen {
+        flex-direction: column;
+        gap: 0em;
+    }
+
+    #oder {
+        margin-top: 1em;
     }
 }
 

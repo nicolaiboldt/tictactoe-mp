@@ -27,14 +27,20 @@
         </header>
         <main>
             <div class="startscreen">
-                <h4>Erstelle ein neues Spiel</h4>
-				<input type="text" name="name" id="nameNew" placeholder="Name" required value="hello">
-				<button id="new">Neues Spiel</button>
-				<br><br>
-				<h4>Tritt einem Spiel bei</h4>
-				<input type="text" name="name" id="nameJoin" placeholder="Name" required value="world">
-				<input type="text" name="room" id="room" placeholder="Raum ID" required value="room-0">
-				<button id="join">Spiel beitreten</button>
+                <div class="login">
+                    <p class="lhead">Erstelle ein neues Spiel</p>
+                    <input type="text" name="name" id="nameNew" placeholder="Name" required value="">
+                    <button id="new">Neues Spiel</button>
+				</div>
+                <div class="login" id="oder">
+                    <p>oder</p>
+                </div>
+                <div class="login">
+                    <p class="lhead">Tritt einem Spiel bei</p>
+                    <input type="text" name="name" id="nameJoin" placeholder="Name" required value="">
+                    <input type="text" name="room" id="room" placeholder="Game ID" required value="">
+                    <button id="join">Spiel beitreten</button>
+                </div>
             </div>
             <h4 id="userHello"></h4>
             <div class="settingBox">
@@ -111,10 +117,10 @@
                             <p id="tSize">Spielfeldgröße:</p>
                             <p id="tMoves">Züge:</p>
                         </div>
-                    </div>
-                    <div class="thirdSetting">
-                        <p id="roomIDP">Game ID:</p>
-                        <p id="roomP"></p>
+                        <div class="thirdSetting">
+                            <p id="roomIDP">Game ID:</p>
+                            <p id="roomP"></p>
+                        </div>
                     </div>
                 </div>
 
