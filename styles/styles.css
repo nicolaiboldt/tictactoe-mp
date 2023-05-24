@@ -6,7 +6,7 @@
 :root{
     margin: 0 auto;
     --columns: 3;
-    --containerwidth: 450px;
+    --containerwidth: 100vw;
     --feldgroesse: var(--containerwidth) / var(--columns);
     
 }
@@ -26,16 +26,15 @@ body{
 }
 
 footer,header,main,.content {
-    width: 100%;
+    width: 100vw;
 }
 
 main{
-    margin-top: 2em;
+    margin: 2em 0 2em 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1em;
 }
 
 footer{
@@ -61,13 +60,14 @@ h1{
 
 h1:hover{
     transform-origin: center;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 nav{
     
     text-align: center;
     white-space: nowrap;
+    height: fit-content;
 }
 
 .start_nav {
@@ -166,8 +166,7 @@ button, button:active{
 }
 
 p {
-    width: 60%;
-    /*margin: 0 auto;*/
+    width: 90%;
 }
 
 .start_desc {
@@ -189,11 +188,11 @@ p {
     justify-content: center;
     align-items: center;
     gap: 2em;
-    width: 100%;
     margin-bottom: 1.5em;
     margin-top: 3em;
     animation: heySlide 0.5s 3s;
     animation-fill-mode: both;
+    margin-bottom: 4em;
 }
 
 .textContent {
@@ -206,7 +205,7 @@ p {
 }
 
 .start_content {
-    width: 70%;
+    width: 90%;
     opacity: 0%;
     animation: slideInTop 1s 3.5s; 
     animation-fill-mode: forwards;
@@ -238,7 +237,6 @@ p {
     object-fit: contain;
     height: 75%;
     width: 80%;
-    /*will-change: transform;*/
     animation: appear 0.3s cubic-bezier(0.5,1.2,0.1,1.1);
 }
 
@@ -247,7 +245,7 @@ p {
     font-weight: 800;
     font-family: mainFont;
     opacity: 100%;
-    animation: appear 0.5s;
+    animation: appear 0.5s 0.1s;
 }
 
 
@@ -258,7 +256,7 @@ p {
     font-family: mainFont;
     border-color: black;
     opacity: 100%;
-    animation: appear 0.5s;
+    animation: appear 0.5s 0.1s;
 }
 
 .start_button_sec:hover {
@@ -269,6 +267,8 @@ p {
 .start_buttonleiste {
     display: flex;
     gap: 2em;
+    justify-content: center;
+    align-items: center;
 }
 
 .start_footer {
@@ -279,14 +279,20 @@ p {
 
 
 #hfu_bild {
-    width: 30%;
+    width: 90%;
+    max-width: 800px;
     transition:0.3s;
     cursor: pointer;
     border-radius: 15px;
+    margin-bottom: 2rem;
 }
 
 #hfu_bild:hover{
     opacity: 60%;
+}
+
+.about {
+    max-width: 1000px;
 }
 
 #slider{
@@ -314,6 +320,10 @@ h2 {
 .start_hzwei {
     font-size: 2.1em;
     margin-bottom: 1em;
+}
+
+.nobr {
+    white-space: nowrap;
 }
 
 .labels {
@@ -549,25 +559,18 @@ h2 {
     transform: scale(1);
 }
 
-.settingBox {
-    display: none;
-    translate: 2px;
-    align-items: center;
-    gap: 0em;
-    
-}
 
 .setting {
     background-color: white;
     box-shadow: 0 0 20px -10px black;
-    display: flex;
+    display: none;
     transform-origin: top;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin: 1rem;
     padding: 1rem;
-    width: 100%;
+    max-width: fit-content;
     border-radius: 20px;
     user-select: none;
     
@@ -620,34 +623,24 @@ h2 {
     font-weight: 800;
 }
 
-#roomP {
+.howto_button {
+    font-size: 1.4em;
+    font-weight: 800;
+    font-family: mainFont;
+    opacity: 100%;
+    animation: growDown 0.5s 0.6s backwards;
 }
 
-@media (max-width: 940px) {
 
-    .boardContainer {
-        scale: 90%;
-        transform-origin: top;
-        transition: 0.3s;
-    }
+@media (max-width: 780px) {
 
     .setting {
         scale: 80%;
         transition: 0.3s;
     }
 
-}
-
-@media (max-width: 732px) {
-
     .boardContainer {
-        scale: 90%;
-        transform-origin: top;
-        transition: 0.3s;
-    }
-
-    .setting {
-        scale: 70%;
+        transform: translateY(-40px);
         transition: 0.3s;
     }
 
@@ -655,16 +648,15 @@ h2 {
 
 @media (max-width: 642px) {
 
-    .boardContainer {
-        scale: 80%;
-        transition: 0.3s;
-    }
-
     .setting {
         scale: 80%;
         height: 1%;
         flex-wrap: wrap;
         transition: 0.3s;
+    }
+
+    .pointsDisplay {
+        border-right: none;
     }
 
     
@@ -691,6 +683,53 @@ h2 {
     #oder {
         margin-top: 1em;
     }
+
+    .regeln {
+        font-size: small;
+        flex-wrap: wrap;
+    }
+
+    .regeln img {
+        size: 80%;
+    }
+
+    .howto_button {
+        font-size: 1em;
+    }
+
+    .start_buttonleiste button {
+        width: fit-content;
+    }
+
+    .start_buttonleiste {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 15%;
+    }
+
+    .start_content {
+        animation: slideInTop 1s 0.1s;
+        animation-fill-mode: forwards;
+    }
+
+    .start_slider {
+        display: none;
+    }
+
+    .start_desc {
+        display: none;
+    }
+
+    .mainContent {
+        display: none;
+    }
+}
+
+@media (max-width: 490px) {
+    .regeln div {
+        flex-wrap: wrap;
+    }
+
 }
 
 @media (max-width: 490px) {
@@ -701,11 +740,17 @@ h2 {
 
 @media (max-width: 436px) {
     nav a {
-        font-size:x-small;
+        padding: 16px 16px;
     }
-
+/* 
     .setting {
         scale: 70%;
+    } */
+}
+
+@media (max-width: 340px) {
+    nav a {
+        font-size: x-small;
     }
 }
 
@@ -805,7 +850,8 @@ h2 {
 .regeln {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 90%;
+    max-width: 800px;
     justify-content: center;
     align-items: center;
     gap: 1em;
@@ -869,14 +915,6 @@ h2 {
     animation: growDown 0.5s 0.4s backwards;
 }
 
-.howto_button {
-    font-size: 1.4em;
-    font-weight: 800;
-    font-family: mainFont;
-    opacity: 100%;
-    animation: growDown 0.5s 0.6s backwards;
-}
-
 
 
 .boardContainer {
@@ -896,6 +934,7 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    user-select: none;
 }
 
 .endscreen.show {

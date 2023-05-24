@@ -62,7 +62,8 @@ function groessenChange() {
         gameStarted = true;
 
         c.style.setProperty("--columns", rangeColumns);
-        const boardgroesse = 500;
+        let bg = $(window).width() > 900 ? 900 : $(window).width() - 50;
+        const boardgroesse = bg;
         const feldgroesse = (boardgroesse / rangeColumns) - 5;
         c.style.setProperty("--feldgroesse", feldgroesse + "px");
         c.style.setProperty("--containerwidth", ((feldgroesse + 2) * rangeColumns) + "px");
@@ -171,9 +172,8 @@ class Game {
 
     displayBoard(message) {
         $(".startscreen").hide();
-        $(".setting").show();
+        $(".setting").css({ "display": "flex" });
         $(".boardContainer").show();
-        $(".settingBox").css({ "display": "flex" });
         $("#userHello").html(message);
         groessenChange();
         console.log("groessenChange");

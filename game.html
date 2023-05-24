@@ -43,87 +43,85 @@
                 </div>
             </div>
             <h4 id="userHello"></h4>
-            <div class="settingBox">
-                <div class="setting">
-                    <div class="firstSetting">
-                        <div id="slider">
-                            <p id="sizeLabel">Spielfeldgröße</p>
-                            <input type="range" min="3" max="7" value="3" id="groesse" oninput="sliderChange()">
-                            <div class="labels">
-                                <label class="sliderLabel">3</label>
-                                <label class="sliderLabel">4</label>
-                                <label class="sliderLabel">5</label>
-                                <label class="sliderLabel">6</label>
-                                <label class="sliderLabel">7</label>
-                            </div>
-                        </div>
-                        <div class="pointsDisplay">
-                            <p>Erreiche</p>
-                            <label id="pointsLabel">3</label>
-                            <p>für den Sieg</p>
-                        </div>
-                        <div class="iconAuswahl" id="auswahlX">
-                            <input type="file" id="inputX" accept="image/jpeg, image/png, image/jpg" hidden="hidden"
-                                onchange="uploadX(event)">
-                            <img class="previewIcon" id="previewIconX" src="assets/img/x.png"
-                                title="Symbol auswählen"></img>
-                            <label id="player1" class="playerLabel show" title="Namen eingeben">Spieler 1</label>
-                            <input type="text" id="namePlayer1" class="playerInput" placeholder="Spieler 1"
-                                maxlength="8" onfocus="this.select();">
-                        </div>
-                        <div class="iconAuswahl" id="auswahlO">
-                            <input type="file" id="inputO" accept="image/jpeg, image/png, image/jpg" hidden="hidden"
-                                onchange="uploadO(event)">
-                            <img class="previewIcon" id="previewIconO" src="assets/img/o.png"
-                                title="Symbol auswählen"></img>
-                            <label id="player2" class="playerLabel show" title="Namen eingeben">Spieler 2</label>
-                            <input type="text" id="namePlayer2" class="playerInput" placeholder="Spieler 2"
-                                maxlength="8" onfocus="this.select();">
+            <div class="setting">
+                <div class="firstSetting">
+                    <div id="slider">
+                        <p id="sizeLabel">Spielfeldgröße</p>
+                        <input type="range" min="3" max="7" value="3" id="groesse" oninput="sliderChange()">
+                        <div class="labels">
+                            <label class="sliderLabel">3</label>
+                            <label class="sliderLabel">4</label>
+                            <label class="sliderLabel">5</label>
+                            <label class="sliderLabel">6</label>
+                            <label class="sliderLabel">7</label>
                         </div>
                     </div>
-                    <div class="secondSetting">
-                        <div class="resetButtons rEins">
-                            <div id="resetDropdown">
-                                <div class="dropdownBG">
-                                    <div id="resetAndIcon">
-                                        <p id="resetP" class="resetP">Standard</p>
-                                        <img id="iconDropdown" class="iconDrop" src="assets/img/dropdown_b.png">
-                                    </div>
-                                </div>
-                                <div class="dropdown">
-                                    <p id="resetIcons" onclick="resetIcons()">Symbole</p>
-                                    <p id="resetNames" onclick="resetNames()">Namen</p>
+                    <div class="pointsDisplay">
+                        <p>Erreiche</p>
+                        <label id="pointsLabel">3</label>
+                        <p>für den Sieg</p>
+                    </div>
+                    
+                </div>
+                <div class="secondSetting">
+                    <div class="iconAuswahl" id="auswahlX">
+                        <input type="file" id="inputX" accept="image/jpeg, image/png, image/jpg" hidden="hidden"
+                            onchange="uploadX(event)">
+                        <img class="previewIcon" id="previewIconX" src="assets/img/x.png"
+                            title="Symbol auswählen"></img>
+                        <label id="player1" class="playerLabel show" title="Namen eingeben">Spieler 1</label>
+                        <input type="text" id="namePlayer1" class="playerInput" placeholder="Spieler 1"
+                            maxlength="8" onfocus="this.select();">
+                    </div>
+                    <div class="iconAuswahl" id="auswahlO">
+                        <input type="file" id="inputO" accept="image/jpeg, image/png, image/jpg" hidden="hidden"
+                            onchange="uploadO(event)">
+                        <img class="previewIcon" id="previewIconO" src="assets/img/o.png"
+                            title="Symbol auswählen"></img>
+                        <label id="player2" class="playerLabel show" title="Namen eingeben">Spieler 2</label>
+                        <input type="text" id="namePlayer2" class="playerInput" placeholder="Spieler 2"
+                            maxlength="8" onfocus="this.select();">
+                    </div>
+                    <div class="resetButtons rEins">
+                        <div id="resetDropdown">
+                            <div class="dropdownBG">
+                                <div id="resetAndIcon">
+                                    <p id="resetP" class="resetP">Standard</p>
+                                    <img id="iconDropdown" class="iconDrop" src="assets/img/dropdown_b.png">
                                 </div>
                             </div>
-                            <button id="getWinner" onclick="getWinner()">Letztes Ergebnis</button>
-                        </div>
-                        <div class="resetButtons">
-                            <button id="winErzwingen" onclick="winErzwingen()">Force win</button>
-                            <button id="showNumbers" onclick="showNumbers()">Show numbers</button>
-                        </div>
-                        <div class="resetButtons" title="Audio ein/aus">
-                            <img id="iconSound" src="assets/img/speaker.png">
-                        </div>
-                        <div id="resetGame" title="Spiel zurücksetzen">
-                            <img id="iconReset" src="assets/img/reset.png">
-                            <div class="cbs">
-                                <div class="cb" id="checkX"></div>
-                                <div class="cb" id="checkO"></div>
+                            <div class="dropdown">
+                                <p id="resetIcons" onclick="resetIcons()">Symbole</p>
+                                <p id="resetNames" onclick="resetNames()">Namen</p>
                             </div>
                         </div>
-                        <div class="stats">
-                            <p id="tLast">Letztes Spiel</p>
-                            <p id="tWinner">Gewinner:</p>
-                            <p id="tSize">Spielfeldgröße:</p>
-                            <p id="tMoves">Züge:</p>
+                        <button id="getWinner" onclick="getWinner()">Letztes Ergebnis</button>
+                    </div>
+                    <div class="resetButtons">
+                        <button id="winErzwingen" onclick="winErzwingen()">Force win</button>
+                        <button id="showNumbers" onclick="showNumbers()">Show numbers</button>
+                    </div>
+                    <div class="resetButtons" title="Audio ein/aus">
+                        <img id="iconSound" src="assets/img/speaker.png">
+                    </div>
+                    <div id="resetGame" title="Spiel zurücksetzen">
+                        <img id="iconReset" src="assets/img/reset.png">
+                        <div class="cbs">
+                            <div class="cb" id="checkX"></div>
+                            <div class="cb" id="checkO"></div>
                         </div>
-                        <div class="thirdSetting">
-                            <p id="roomIDP">Game ID:</p>
-                            <p id="roomP"></p>
-                        </div>
+                    </div>
+                    <div class="stats">
+                        <p id="tLast">Letztes Spiel</p>
+                        <p id="tWinner">Gewinner:</p>
+                        <p id="tSize">Spielfeldgröße:</p>
+                        <p id="tMoves">Züge:</p>
+                    </div>
+                    <div class="thirdSetting">
+                        <p id="roomIDP">Game ID:</p>
+                        <p id="roomP"></p>
                     </div>
                 </div>
-
             </div>
             <div class="boardContainer" hidden>
                 <div class="board x" id="spiel">
@@ -144,7 +142,7 @@
             </div>
         </main>
     </div>
-    <footer>Impressum</footer>
+    <footer>&#169; Nicolai Boldt</footer>
 </body>
 
 </html>
