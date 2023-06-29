@@ -3,19 +3,19 @@
     src: url(../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf);
 }
 
-:root{
+:root {
     margin: 0 auto;
     --columns: 3;
     --containerwidth: 100vw;
     --feldgroesse: var(--containerwidth) / var(--columns);
-    
+
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body{
+body {
     margin: 0 auto;
     text-align: center;
     font-family: mainFont;
@@ -26,24 +26,27 @@ body{
     overflow-x: hidden;
 }
 
-footer,header,main,.content {
+footer,
+header,
+main,
+.content {
     width: 100%;
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-footer{
+footer {
     border-top: 1px solid black;
     padding: 1em;
     text-align: center;
 }
 
-h1{
+h1 {
     display: inline-block;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -69,16 +72,18 @@ h1{
     animation-fill-mode: forwards;
 }
 
-h1:hover{
+h1:hover {
     transform-origin: center;
     transform: scale(1.05);
 }
 
-nav{
-    
+nav {
+
     text-align: center;
     white-space: nowrap;
     height: fit-content;
+    padding: 15px;
+    margin-bottom: 1em;
 }
 
 .start_nav {
@@ -87,7 +92,7 @@ nav{
     animation-fill-mode: forwards;
 }
 
-nav a{
+nav a {
     transition: 0.2s;
     border-radius: 20px;
     padding: 15px 32px;
@@ -95,7 +100,7 @@ nav a{
     color: black;
 }
 
-nav a:hover{
+nav a:hover {
     background-color: black;
     color: white;
 }
@@ -105,7 +110,8 @@ nav a:hover{
     color: white;
 }
 
-button, button:active{
+button,
+button:active {
     background-color: #f4511e;
     display: flexbox;
     border: none;
@@ -127,7 +133,7 @@ button, button:active{
         color: black;
         border: 1px solid black;
         transform: scale(1.05);
-  }
+    }
 }
 
 .startscreen {
@@ -147,7 +153,7 @@ button, button:active{
     width: 100%;
 }
 
-.lhead{
+.lhead {
     margin: 0 auto;
     font-size: 1.2em;
     font-weight: 600;
@@ -218,13 +224,13 @@ p {
 .start_content {
     width: 90%;
     opacity: 0%;
-    animation: slideInTop 1s 3.5s; 
+    animation: slideInTop 1s 3.5s;
     animation-fill-mode: forwards;
 }
 
-.hi {    
+.hi {
     display: grid;
-    grid-template-columns:  repeat(5,auto);
+    grid-template-columns: repeat(5, auto);
     column-gap: 0px;
     width: 12em;
     height: 12em;
@@ -248,7 +254,7 @@ p {
     object-fit: contain;
     height: 75%;
     width: 80%;
-    animation: appear 0.3s cubic-bezier(0.5,1.2,0.1,1.1);
+    animation: appear 0.3s cubic-bezier(0.5, 1.2, 0.1, 1.1);
 }
 
 .start_button {
@@ -263,7 +269,7 @@ p {
 
 .start_button_sec {
     background-color: white;
-    color:black;
+    color: black;
     font-family: mainFont;
     border-color: black;
     opacity: 100%;
@@ -292,13 +298,13 @@ p {
 #hfu_bild {
     width: 90%;
     max-width: 800px;
-    transition:0.3s;
+    transition: 0.3s;
     cursor: pointer;
     border-radius: 15px;
     margin-bottom: 2rem;
 }
 
-#hfu_bild:hover{
+#hfu_bild:hover {
     opacity: 60%;
 }
 
@@ -306,7 +312,7 @@ p {
     max-width: 1000px;
 }
 
-#slider{
+#slider {
     margin-left: 1em;
 }
 
@@ -321,7 +327,7 @@ p {
     width: fit-content;
     height: fit-content;
     border-radius: 20px;
-    float:inline-end;
+    float: inline-end;
 }
 
 h2 {
@@ -385,15 +391,17 @@ h2 {
     transition: 0.2s;
     width: 4.5em;
 }
+
 .iconAuswahl:hover {
     opacity: 100%;
 }
+
 .iconAuswahl.high {
     opacity: 100%;
 }
 
 .playerInput {
-    display:none;
+    display: none;
     width: 100%;
     height: 100%;
     font-family: mainFont;
@@ -405,18 +413,18 @@ h2 {
 }
 
 .playerLabel:hover {
-    cursor:text;
+    cursor: text;
 }
 
 .playerLabel {
-    display:none;
+    display: none;
     padding-top: 2px;
 }
 
 .playerLabel.show {
     display: inline-block;
     line-break: strict;
-   
+
     animation: fadeIn 0.3s;
 }
 
@@ -508,7 +516,7 @@ h2 {
         background-color: white;
         color: black;
         border: 1px solid black;
-  }
+    }
 }
 
 #resetDropdown {
@@ -561,6 +569,7 @@ h2 {
     transform: scale(1);
 
 }
+
 #getWinner:hover {
     cursor: pointer;
     font-family: mainFont;
@@ -584,7 +593,7 @@ h2 {
     max-width: fit-content;
     border-radius: 20px;
     user-select: none;
-    
+
 }
 
 .firstSetting {
@@ -670,7 +679,7 @@ h2 {
         border-right: none;
     }
 
-    
+
     .firstSetting {
         flex-basis: 100%;
         transition: 0.3s;
@@ -753,7 +762,8 @@ h2 {
     nav a {
         padding: 16px 16px;
     }
-/* 
+
+    /* 
     .setting {
         scale: 70%;
     } */
@@ -775,7 +785,7 @@ h2 {
     border-radius: 15px;
     margin: 1rem;
     z-index: 100;
-    
+
 }
 
 .stats.show {
@@ -794,7 +804,6 @@ h2 {
     text-align: left;
     width: 100%;
     padding: 0.2em
-
 }
 
 #tLast {
@@ -937,7 +946,7 @@ h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     border-radius: 20px;
     padding: 1rem;
     background-color: white;
@@ -972,7 +981,7 @@ h2 {
 
 #spiel {
     display: grid;
-    grid-template-columns:  repeat(var(--columns),auto);
+    grid-template-columns: repeat(var(--columns), auto);
     column-gap: 0px;
     width: var(--containerwidth);
     height: var(--containerwidth);
@@ -993,7 +1002,8 @@ h2 {
     pointer-events: none;
 }
 
-.grid-item.x:hover, .grid-item.o:hover {
+.grid-item.x:hover,
+.grid-item.o:hover {
     cursor: not-allowed;
 }
 
@@ -1008,7 +1018,7 @@ h2 {
     align-items: center;
     transition: 0.3s;
     cursor: pointer;
-  }
+}
 
 .grid-item.high {
     background-color: #f4511e;
@@ -1036,94 +1046,99 @@ h2 {
     height: 75%;
     width: 80%;
     /*will-change: transform;*/
-    animation: appear 0.3s cubic-bezier(0.5,1.2,0.1,1.1);
-   
+    animation: appear 0.3s cubic-bezier(0.5, 1.2, 0.1, 1.1);
+
 }
 
 @keyframes appear {
     0% {
-    transform: scale(0.3);
-    opacity: 0%;
-    filter: blur(2px);
+        transform: scale(0.3);
+        opacity: 0%;
+        filter: blur(2px);
     }
-  100% {
-    transform: scale(1);
-    opacity: 100%;
-    filter: blur(0px);
+
+    100% {
+        transform: scale(1);
+        opacity: 100%;
+        filter: blur(0px);
     }
 }
 
 @keyframes slideInTop {
     0% {
-      transform: translateY(5%);
-      opacity: 0%;
+        transform: translateY(5%);
+        opacity: 0%;
     }
-    100% {
-      transform: translateX(0);
-      opacity: 100%;
-    }
-  }
 
-  @keyframes fadeIn {
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn {
     0% {
-      opacity: 0%;
+        opacity: 0%;
     }
-    100% {
-      transform: translateX(0);
-      opacity: 100%;
-    }
-  }
 
-  @keyframes heySlide {
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes heySlide {
     0% {
-      transform: translateY(120%);
+        transform: translateY(120%);
     }
-    100% {
-      transform: translateX(0);
-      opacity: 100%;
-    }
-  }
 
-  @keyframes btnHover {
-      0% {
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes btnHover {
+    0% {
         transform: scale(1);
-      }
-      100% {
-        transform: scale(1.1);
-      }
-  }
+    }
 
-  @keyframes dropdown {
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes dropdown {
 
     0% {
 
         transform: translateX(-1em);
         opacity: 0%;
-    
-      }
-    
-      100% {
-    
+
+    }
+
+    100% {
+
         transform: translateX(0em);
         opacitiy: 100%;
-    
-      }
-  }
 
-  @keyframes growDown {
+    }
+}
+
+@keyframes growDown {
 
     0% {
-  
-      transform: translateY(-1.5em);
-      opacity: 0%;
-  
+
+        transform: translateY(-1.5em);
+        opacity: 0%;
+
     }
-  
+
     100% {
-  
+
         transform: translateY(0);
         opacity: 100%;
-  
+
     }
-  
-  }
+
+}
