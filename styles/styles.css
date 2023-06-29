@@ -23,14 +23,14 @@ body{
     align-content: space-between;
     flex-wrap: wrap;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 footer,header,main,.content {
-    width: 100vw;
+    width: 100%;
 }
 
 main{
-    margin: 2em 0 2em 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +50,17 @@ h1{
     text-align: center;
     color: black;
     transition: 0.3s;
+}
+
+#userHello {
+    margin-top: 0;
+}
+
+#back {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: none;
 }
 
 .start_heins {
