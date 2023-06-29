@@ -203,8 +203,10 @@ class Game {
 
         if (player.getCurrentTurn()) {
             board.classList.remove("show");
+            groesse.disabled = false;
         } else {
             board.className += " show";
+            groesse.disabled = true;
         }
     }
 
