@@ -226,6 +226,7 @@ p {
     opacity: 0%;
     animation: slideInTop 1s 3.5s;
     animation-fill-mode: forwards;
+    margin-top: 5em;
 }
 
 .hi {
