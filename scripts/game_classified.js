@@ -62,7 +62,7 @@ function groessenChange() {
         gameStarted = true;
 
         c.style.setProperty("--columns", rangeColumns);
-        let bg = $(window).width() > 600 ? 600 : $(window).width() - 50;
+        const bg = $(window).width() > 600 ? 600 : $(window).width() - 50;
         const boardgroesse = bg;
         const feldgroesse = (boardgroesse / rangeColumns) - 5;
         c.style.setProperty("--feldgroesse", feldgroesse + "px");
@@ -173,13 +173,13 @@ class Game {
     displayBoard(message) {
         $(".startscreen").hide();
         $("nav").hide();
-        if ($(window).innerWidth() > 780)
+        if ($(window).innerWidth() > 780) {
             $("#back").show();
+        }
         $(".setting").css({ "display": "flex" });
         $(".boardContainer").show();
         $("#userHello").html(message);
         groessenChange();
-        console.log("groessenChange");
 
         for (let i = 0; i < boxes.length; i++) {
             const box = boxes[i];
@@ -266,10 +266,11 @@ class Game {
         board.classList.remove("o");
         if (player.getCurrentTurn()) {
             board.classList.remove("show");
+            groesse.disabled = false;
         } else {
             board.className += " show";
+            groesse.disabled = true;
         }
-        console.log("currentTurn: " + player.getCurrentTurn() + ", PlayerType: " + player.getPlayerType());
         if (player.getCurrentTurn() == 1 && player.getPlayerType() == P2 || player.getCurrentTurn() == 0 && player.getPlayerType() == P1) {
             board.classList.add("x");
             auswahlX.classList.remove("high");
@@ -300,14 +301,12 @@ class Game {
             let curr = 0;
             for (let i = 0; i < highBoxes[0].length; i++) {
                 curr = parseInt(highBoxes[0][i]);
-                console.log("curr: " + parseInt(highBoxes[0][i]));
-                console.log("box: " + boxes[curr]);
                 boxes[curr].className += " high";
             }
 
             endText.textContent = `${winner} gewinnt!`;
-            let nontype = player.type == P1 ? P2 : P1;
-            let type = player.name == winner ? player.type : nontype;
+            const nontype = player.type == P1 ? P2 : P1;
+            const type = player.name == winner ? player.type : nontype;
             winningIcon.src = icons[type].path;
             winningIcon.className += " show";
         } else {
@@ -383,7 +382,6 @@ function sliderChange() {
         roomID = game.getRoomId();
         game.syncBoard();
         socket.emit("sizeChange", { size: groesse.value, board: game.board, room: roomID });
-        console.log("sizeChange sent!");
     }
 }
 
@@ -407,7 +405,6 @@ socket.on("newGame", (data) => {
     labelPlayer1.textContent = data.name;
     labelPlayer2.textContent = "";
     game = new Game(data.board, data.room);
-    console.log("received board: " + data.board);
     game.displayBoard(message);
 });
 
@@ -426,10 +423,8 @@ socket.on("player2", (data) => {
 
     roomP.textContent = data.room;
     groesse.value = data.size;
-    console.log("sizeChange received! Size = " + data.size);
     player = new Player(name, data.type);
     player.setCurrentTurn(data.turn);
-    console.log("currentTurn: " + data.turn);
     game = new Game(data.board, data.room);
     game.displayBoard(message);
     labelPlayer1.textContent = data.name1;
@@ -466,7 +461,6 @@ socket.on("resetUpdate", (data) => {
 socket.on("sizeChange", (data) => {
     groesse.value = data.size;
     groessenChange();
-    console.log("sizeChange received! Size = " + data.size);
 });
 
 socket.on("turnPlayed", (data) => {
@@ -477,7 +471,6 @@ socket.on("turnPlayed", (data) => {
 });
 
 socket.on("announceWinner", (data) => {
-    console.log("WINNER: " + data.winner);
     game.announceWinner(data.winner, data.boxes);
 });
 
